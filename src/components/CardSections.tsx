@@ -8,7 +8,7 @@ import HotelCard from './HotelCard';
 
 function CardInner({ card }: { card: SiteCard }) {
   return (
-    <div className="relative w-full h-full overflow-hidden rounded-2xl group/card">
+    <div className="relative w-full flex-1 min-h-0 h-full overflow-hidden rounded-2xl group/card" style={{ minHeight: 'inherit' }}>
       {card.image ? (
         <img
           src={card.image}
@@ -121,7 +121,7 @@ export default function CardSections({ page = '/' }: { page?: string }) {
                   ) : (
                     <CardLink
                       card={card}
-                      className="w-full card-lift flex-1 min-h-0"
+                      className="w-full card-lift flex-1 min-h-0 flex flex-col"
                       style={{ minHeight: cardHeight }}
                     />
                   )}
